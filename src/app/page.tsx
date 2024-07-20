@@ -1,9 +1,14 @@
+'use client';
+
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 const interests = [{ icon: null, text: "Traveling" }, { icon: null, text: "Drawing" }, { icon: null, text: "Hiking" }, { icon: null, text: "Photography" }, { icon: null, text: "Music" }, { icon: null, text: "Video Games" },]
 const skills = [{ icon: null, text: "ReactJS" }, { icon: null, text: "NodeJS" }, { icon: null, text: "TypeScript" }, { icon: null, text: "SQL" }]
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <main className="flex min-h-screen flex-col justify-between p-24 text-normal">
       <div className="flex flex-col gap-8 px-2 before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] ">
@@ -26,7 +31,9 @@ export default function Home() {
             <div className='w-1/2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70] border-2 rounded-lg'>
               My art
             </div>
-            <div className='w-1/2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70] border-2 rounded-lg'>
+            <div className='w-1/2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70] border-2 rounded-lg cursor-pointer' onClick={() => {
+              router.push("/photography")
+            }}>
               My photos
             </div>
             <div className='w-1/2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70] border-2 rounded-lg'>
