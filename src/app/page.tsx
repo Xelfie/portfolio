@@ -45,7 +45,7 @@ export default function Home() {
         {/* SKILLS & HOBBIES */}
         <div>
           <div className='text-center text-2xl p-4'>
-            <h2 className='text-2xl'>I'm a Jack of all trades, master of none</h2>
+            <h2 className='text-2xl'>I&apos;m a Jack of all trades, master of none</h2>
             <p className='text-sm pt-2'>...but oftentimes better than a master of one!</p>
           </div>
           <div className='flex flex-col gap-4'>
