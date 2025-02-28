@@ -1,3 +1,5 @@
+import PhotographyShowcase from "./PhotographyShowcase";
+
 function MyWorkShowcase() {
   return (
     <div className="w-full">
@@ -7,9 +9,7 @@ function MyWorkShowcase() {
           My art
         </div>
 
-        <div className="w-1/2 rounded-lg border-2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
-          My photos
-        </div>
+        <PhotographyShowcase />
 
         <div className="w-1/2 rounded-lg border-2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
           Some web pages

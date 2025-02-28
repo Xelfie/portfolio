@@ -1,3 +1,3 @@
-export default function PhotographyShowcase() {
+export default function PhotographyPage() {
   return <div>Here will be some photo categories (folders) to navigate to</div>;
 }
