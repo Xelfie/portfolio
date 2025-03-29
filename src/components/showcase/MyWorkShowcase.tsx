@@ -1,22 +1,44 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/css";
 import PhotographyShowcase from "./PhotographyShowcase";
 
-function MyWorkShowcase() {
+export const MyWorkShowcase = () => {
   return (
-    <div className="w-full">
-      <h2 className="p-4 text-center text-2xl">Check out some of my work!</h2>
-      <div className="flex flex-row gap-8">
-        <div className="w-1/2 rounded-lg border-2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
-          My art
-        </div>
+    <div className={containerStyle}>
+      <h2 className={headingStyle}>Check out some of my work!</h2>
+      <div className={flexRowStyle}>
+        <div className={cardStyle}>My art</div>
 
         <PhotographyShowcase />
 
-        <div className="w-1/2 rounded-lg border-2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
-          Some web pages
-        </div>
+        <div className={cardStyle}>Some web pages</div>
       </div>
     </div>
   );
 }
 
-export default MyWorkShowcase;
+const containerStyle = css`
+  width: 100%;
+`;
+
+const headingStyle = css`
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+`;
+
+const flexRowStyle = css`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+`;
+
+export const cardStyle = css`
+  width: 50%;
+  border-radius: 0.5rem;
+  border: 2px solid;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.3rem #ffffff70;
+`;
+
+

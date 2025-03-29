@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/css";
+
 const interests = [
   { icon: null, text: "Traveling" },
   { icon: null, text: "Drawing" },
@@ -13,18 +16,18 @@ const skills = [
   { icon: null, text: "SQL" },
 ];
 
-function SkillsAndHobbiesShowcase() {
+export const SkillsAndHobbiesShowcase = () => {
   return (
     <div>
-      <div className="p-4 text-center text-2xl">
-        <h2 className="text-2xl">
+      <div className={containerStyle}>
+        <h2 className={headingStyle}>
           I&apos;m a Jack of all trades, master of none
         </h2>
-        <p className="pt-2 text-sm">
+        <p className={subTextStyle}>
           ...but oftentimes better than a master of one!
         </p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className={listContainerStyle}>
         <p>
           My professional skills include:
           {skills.map((skill) => (
@@ -46,4 +49,23 @@ function SkillsAndHobbiesShowcase() {
   );
 }
 
-export default SkillsAndHobbiesShowcase;
+const containerStyle = css`
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+`;
+
+const headingStyle = css`
+  font-size: 1.5rem;
+`;
+
+const subTextStyle = css`
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+`;
+
+const listContainerStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;

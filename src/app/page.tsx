@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/css";
 import Image from "next/image";
 
-import MyWorkShowcase from "@/components/showcase/MyWorkShowcase";
-import SkillsAndHobbiesShowcase from "@/components/showcase/SkillsAndHobbiesShowcase";
+import { MyWorkShowcase } from "@/components/showcase/MyWorkShowcase";
+import { SkillsAndHobbiesShowcase } from "@/components/showcase/SkillsAndHobbiesShowcase";
 
 // PLAN:
 // Night mode: parallax effect stars
@@ -10,24 +12,19 @@ import SkillsAndHobbiesShowcase from "@/components/showcase/SkillsAndHobbiesShow
 export default function Home() {
   return (
     <>
-      {/* <div className="h-screen w-screen">
-        <Image src="/cloud1.png" alt="Cloud image" layout="fill" />
-      </div> */}
 
-      <main className="flex min-h-screen flex-col justify-between p-24">
-        <div className="flex flex-col gap-8 px-2">
-          <div className="flex w-full items-center gap-8 dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
+      <main className={mainStyle}>
+        <div className={contentStyle}>
+          <div className={headerStyle}>
             <Image
               src="/assets/cloud1.png"
               alt="Cloud image"
-              // layout="fill"
               width={180}
               height={37}
-              // priority
             />
 
             <Image
-              className="relative rounded-full dark:drop-shadow-[0_0_0.3rem_#ffffff70]"
+              className={roundedImageStyle}
               src="/marine_dp2.png"
               alt="Next.js Logo"
               width={180}
@@ -48,3 +45,43 @@ export default function Home() {
     </>
   );
 }
+
+const containerStyle = css`
+  height: 100vh;
+  width: 100vw;
+`;
+
+const mainStyle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 24px;
+`;
+
+const contentStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 8px;
+`;
+
+const headerStyle = css`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+
+  .dark & {
+    filter: drop-shadow(0 0 0.3rem #ffffff70);
+  }
+`;
+
+const roundedImageStyle = css`
+  position: relative;
+  border-radius: 50%;
+
+  .dark & {
+    filter: drop-shadow(0 0 0.3rem #ffffff70);
+  }
+`;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { cardStyle } from "./MyWorkShowcase";
 
 function PhotographyShowcase() {
   const router = useRouter();
@@ -12,7 +13,7 @@ function PhotographyShowcase() {
   return (
     <button
       type="button"
-      className="w-1/2 cursor-pointer rounded-lg border-2 p-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70]"
+      // className={cardStyle}
       onClick={handleClick}
       onKeyDown={handleClick}
     >
